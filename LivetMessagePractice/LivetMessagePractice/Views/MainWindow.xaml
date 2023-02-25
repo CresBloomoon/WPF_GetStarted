@@ -1,0 +1,20 @@
+﻿<Window
+    x:Class="LivetMessagePractice.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+    xmlns:v="clr-namespace:LivetMessagePractice.Views"
+    xmlns:vm="clr-namespace:LivetMessagePractice.ViewModels"
+    Title="MainWindow"
+    Width="525"
+    Height="350">
+
+    <behaviors:Interaction.Behaviors>
+        <l:WindowCloseCancelBehavior CanClose="{Binding CanClose, Mode=OneWay}"
+                                     CloseCanceledCallbackMethodTarget="{Binding}"
+                                     CloseCanceledCallbackMethodName="CloseCanceledCalback" />
+    </behaviors:Interaction.Behaviors>
+    
+    <Grid />
+</Window>

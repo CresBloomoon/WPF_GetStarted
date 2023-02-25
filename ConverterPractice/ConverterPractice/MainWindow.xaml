@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:ConverterPractice"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <converter:DateTimeConverter x:Key="DateTimeConverter"/>
+    </Window.Resources>
 
-    </Grid>
+    <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Dt, ElementName=root, Converter={StaticResource DateTimeConverter}, ConverterParameter=123}"/>
 </Window>

@@ -1,0 +1,27 @@
+﻿<mah:MetroWindow x:Class="MaterialDesignPractice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:MaterialDesignPractice"
+        BorderThickness="1"
+        mc:Ignorable="d"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        NonActiveBorderBrush="{DynamicResource AccentColorBrush}"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="10">
+        <Label Content="Text"/>
+        <TextBox />
+        <Label Content="Item"/>
+        <TextBox />
+        <Label Content="ListItems"/>
+        <ComboBox>
+            <ComboBoxItem Content="aaa" />
+            <ComboBoxItem Content="aaa" />
+            <ComboBoxItem Content="aaa" />
+        </ComboBox>
+        <Button Margin="10" Content="Submit"/>
+    </StackPanel>
+</mah:MetroWindow>

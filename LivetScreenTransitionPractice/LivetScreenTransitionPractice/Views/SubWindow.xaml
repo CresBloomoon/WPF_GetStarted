@@ -1,0 +1,61 @@
+﻿<Window x:Class="LivetScreenTransitionPractice.Views.SubWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LivetScreenTransitionPractice.Views"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="SubWindow" Height="180" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <behaviors:Interaction.Triggers>
+        <l:InteractionMessageTrigger MessageKey="Close" Messenger="{Binding Messenger}">
+            <l:WindowInteractionMessageAction InvokeActionOnlyWhenWindowIsActive="False"/>
+        </l:InteractionMessageTrigger>
+        <behaviors:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction/>
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+
+    
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="8"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition />
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="8"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="8" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="ID" Padding="8,0" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="名前" Padding="8,0" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="住所" Padding="8,0" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center" />
+        <TextBox Grid.Column="2" Grid.Row="1" BorderBrush="RoyalBlue" 
+                 Text="{Binding Person.Id}" IsReadOnly="True" />
+        <TextBox Grid.Column="2" Grid.Row="3" BorderBrush="RoyalBlue" 
+                 Text="{Binding Person.Name}" />
+        <TextBox Grid.Column="2" Grid.Row="5" BorderBrush="RoyalBlue" 
+                 Text="{Binding Person.Address}" />
+        <Button Content="更新" Grid.Column="2" Grid.Row="7" 
+                Command="{Binding UpdateCommand}"
+                HorizontalAlignment="Right" Width="80" Margin="0,0,84,0"/>
+        <Button Content="キャンセル" Grid.Column="2" Grid.Row="7" 
+                Command="{Binding CancelCommand}"
+                HorizontalAlignment="Right" Width="80"/>
+    </Grid>
+</Window>
