@@ -1,0 +1,1 @@
+https://mseeeen.msen.jp/reactive-property-programming-by-wpf-beginner/
