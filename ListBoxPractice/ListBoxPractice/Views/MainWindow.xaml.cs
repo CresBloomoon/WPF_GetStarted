@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ListBoxPractice.Models;
+using ListBoxPractice.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +27,34 @@ namespace ListBoxPractice.Views
     {
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+
+            var vm = new MainWindowViewModel();
+            vm.ItemsSource.Add(new CardItem()
+            {
+                Message = "aaaaaaaa",
+                BarColor = new SolidColorBrush(Color.FromRgb(0x45, 0x6D, 0xEE))
+            });
+
+            vm.ItemsSource.Add(new CardItem()
+            {
+                Message = "aaaaaaaa",
+                BarColor = new SolidColorBrush(Color.FromRgb(0x45, 0x6D, 0xEE))
+            });
+
+            vm.ItemsSource.Add(new CardItem()
+            {
+                Message = "aaaaaaaa",
+                BarColor = new SolidColorBrush(Color.FromRgb(0x45, 0x6D, 0xEE))
+            });
+
+            vm.ItemsSource.Add(new CardItem()
+            {
+                Message = "aaaaaaaa",
+                BarColor = new SolidColorBrush(Color.FromRgb(0x45, 0x6D, 0xEE))
+            });
+
+            this.DataContext = vm;
         }
     }
 }
